@@ -27,8 +27,21 @@ INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
 ORDER BY
     salary_year_avg DESC
 
+/*
+Insights from analyse
+Skill Trends: The analysis uncovered the highest-paying skills for data analysts, highlighting the importance of technical skills like SQL, Python, and R, as well as proficiency in data visualization tools and cloud computing.
 
-    
+Demand for Specific Skills: A strong demand for SQL skills was observed across all job listings, underscoring its significance as a fundamental skill for data analysts.
+
+Connection with Cloud Tools: The presence of skills in cloud computing tools such as Azure and AWS reflects the increasing adoption of cloud-based data analytics solutions by companies.
+
+Emphasis on Collaboration and Project Management: In addition to technical skills, several listings mentioned proficiency in collaboration tools like Git, Jenkins, and Jira, highlighting the importance of teamwork and effective project management in data analysis.
+
+Continuous Skill Evolution: The list reflects current trends in data analyst skills, but it's important to recognize that the field is constantly evolving. Therefore, it's crucial to keep learning and staying updated with new technologies and emerging practices.    
+*/
+
+
+
 /*
 [
   {
