@@ -17,3 +17,5 @@ ORDER BY
     salary_year_avg DESC
 LIMIT 10
 )
+ SELECT *   
+ FROM top_paying_jobs
