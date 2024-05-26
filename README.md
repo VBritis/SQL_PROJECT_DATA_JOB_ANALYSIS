@@ -1,18 +1,19 @@
 # Introduction
-    🌌 This project focuses on analyzing job market data using SQL to uncover trends, identify top-paying jobs, and understand skill demands focus in data scientist rules! The SQL scripts provided facilitate detailed analysis to extract valuable insights from job market data.
+🌌 This project focuses on analyzing job market data using SQL to uncover trends, identify top-paying jobs, and understand skill demands focus in data scientist rules! The SQL scripts provided facilitate detailed analysis to extract valuable insights from job market data.
 
-    🔎 SQL queries? Check them out here: [sql_project folder](/project_sql/)
-    📊 Graphics? Check out here: [graphics folder](/visualization/)
+🔎 SQL queries? Check them out here: [graphics folder](/visualization/)
+
+📊 Graphics? Check out here: [graphics folder](/visualization/)
 
 # Background
-   🌠 The job market dataset includes various attributes such as job titles, companies, locations, salaries, and job descriptions. The primary objective is to use SQL to clean, process, and analyze this data to understand job trends and salary distributions.
+🌠 The job market dataset includes various attributes such as job titles, companies, locations, salaries, and job descriptions. The primary objective is to use SQL to clean, process, and analyze this data to understand job trends and salary distributions.
 
 # Tools I Used
 -  **SQL**: For querying and analyzing data.
 - **PostgreSQL**: As the database management system.
 - **GIT and GITHUB**: For upload and create a repositor.
 - **Excel**: For initial data exploration and preprocessing.
-    
+   
     
     
 # The Analysis
@@ -50,7 +51,7 @@ Here the breakdown of the top data scientists jobs in 2023:
 
 - **Company Size and Reputation** - Companies like Walmart, Reddit, and Demandbase are well-known and likely have substantial resources to invest in data science. Positions in such companies may offer higher salaries compared to smaller or less established companies.
 
-![Top Paying Roles](assets\1_query.png)
+![Top Paying Roles](assets\1_.query.png)
 *Bar graph visualizing the top 10 data jobs*
 
 
