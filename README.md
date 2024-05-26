@@ -89,21 +89,132 @@ ORDER BY
     salary_year_avg DESC
 ```
 
+Here the breakdown of the top data scientists job skills in 2023:
 
+- **Proficiency in Programming Languages** - There is a strong demand for skills in languages such as SQL, Python, Java, and others like Pandas, Numpy, and Scikit-learn. This suggests that employers value candidates capable of efficiently manipulating and analyzing data in an automated manner.
 
+- **Competencies in Platforms and Tools** - In addition to programming languages, skills in cloud computing platforms such as AWS, Azure, and GCP are also highly valued. This reflects the increasing adoption of cloud infrastructure for processing and analyzing data at scale.
 
+- **Specialization in Specific Domains** - Some positions require specific knowledge, such as the Director of Data Science with skills in Pandas and Numpy, indicating a need for professionals specialized in data analysis within a particular context, such as data science applied to specific products or services. This highlights the importance of specialization in certain domains for more advanced and well-paying positions.
 
+![Top Paying Skills](/assets/2_query.png)
+*Bar graph visualizing the top 30 skills*
 ### 3_top_demanded_skills.sql: Finds the most demanded skills in the job market.
 
  This analysis highlights which skills are in the highest demand, guiding job seekers to develop these skills. For instance, skills in data science and analytics are highly demanded across various roles.
+
+
+
+``` sql
+SELECT skills,
+    COUNT(skills_job_dim.job_id) AS demand_count
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    job_title_short = 'Data Scientist' AND
+    job_work_from_home = TRUE
+GROUP BY
+    skills
+ORDER BY
+    demand_count DESC
+LIMIT 5
+```
+
+Here the breakdown of the top demanded skills for data scientists in 2023:
+
+
+- **Python Dominance**: Python stands out as the most in-demand skill for data scientists, with a significantly higher demand count compared to other skills. Its versatility, ease of use, and extensive libraries for data analysis, machine learning, and visualization contribute to its popularity.
+
+- **SQL Proficiency**: SQL (Structured Query Language) remains a crucial skill for data scientists, with a substantial demand count. Proficiency in SQL is essential for managing and querying databases, which are often a primary source of data for data science projects.
+
+- **Emerging Technologies**: Skills like AWS (Amazon Web Services) indicate a growing demand for cloud computing expertise among data scientists. As more organizations adopt cloud-based solutions for data storage, processing, and deployment, familiarity with platforms like AWS becomes increasingly valuable for data scientists.
+
+These insights highlight the importance of a diverse skill set for data scientists, encompassing programming languages, data querying and manipulation, and knowledge of emerging technologies like cloud computing.
+
+![Top 5 demanded skills](/assets/3_query.png)
+*Bar graph visualizing the top 5 demanded skills*
+
 
 ### 4_top_paying_skills.sql: Identifies top-paying skills.
 
  This script uncovers which skills command the highest salaries, allowing professionals to invest in skills that provide the best return on investment. Data science and analytics skills associated with high-paying jobs are particularly noteworthy.
 
+
+```sql
+SELECT skills,
+    ROUND(AVG(salary_year_avg),0) AS avg_salary
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    job_title_short = 'Data Scientist' AND
+    salary_year_avg IS NOT NULL AND
+    job_work_from_home = TRUE
+GROUP BY
+    skills
+ORDER BY
+    avg_salary DESC
+LIMIT 25
+```
+
+
+
 ### 5_optimal_skills.sql: Determines the optimal skills that balance demand and pay.
 
  This analysis identifies skills that are both highly demanded and well-compensated, providing a strategic focus for career development. Skills relevant to roles such as "Director of Data Science & Analytics" at Reddit and "Head of Data Science" at Demandbase are both in demand and well-paid.
+
+
+
+
+```sql
+WITH skills_demand AS(
+    SELECT
+        skills_dim.skill_id, 
+        skills_dim.skills,
+        COUNT(skills_job_dim.job_id) AS demand_count
+    FROM job_postings_fact
+    INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+    INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+    WHERE
+        job_title_short = 'Data Scientist' AND
+        job_work_from_home = TRUE AND
+        salary_year_avg IS NOT NULL 
+    GROUP BY
+        skills_dim.skill_id
+), avg_salary_skills AS(
+    SELECT
+        skills_job_dim.skill_id, 
+        ROUND(AVG(salary_year_avg),0) AS avg_salary
+    FROM job_postings_fact
+    INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+    INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+    WHERE
+        job_title_short = 'Data Scientist' AND
+        salary_year_avg IS NOT NULL AND
+        job_work_from_home = TRUE
+    GROUP BY
+        skills_job_dim.skill_id
+)
+
+SELECT
+    skills_demand.skill_id,
+    skills_demand.skills,
+    demand_count,
+    avg_salary
+FROM 
+    skills_demand
+INNER JOIN avg_salary_skills ON skills_demand.skill_id = avg_salary_skills.skill_id
+ORDER BY
+     avg_salary DESC,
+    demand_count DESC
+LIMIT 25
+```
+
+
+
+
+
 
 # Conclusions
 This project highlights the power of SQL in data analysis, offering valuable insights into job market trends and salary distributions. The SQL scripts provided can be reused and adapted for similar data analysis tasks.
