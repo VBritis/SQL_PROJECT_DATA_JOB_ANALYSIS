@@ -51,7 +51,7 @@ Here the breakdown of the top data scientists jobs in 2023:
 
 - **Company Size and Reputation** - Companies like Walmart, Reddit, and Demandbase are well-known and likely have substantial resources to invest in data science. Positions in such companies may offer higher salaries compared to smaller or less established companies.
 
-![Top Paying Roles](assets\1_.query.png)
+![Top Paying Roles](/assets/query.png)
 *Bar graph visualizing the top 10 data jobs*
 
 
