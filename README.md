@@ -12,7 +12,9 @@
 -  **SQL**: For querying and analyzing data.
 - **PostgreSQL**: As the database management system.
 - **GIT and GITHUB**: For upload and create a repositor.
-- **Excel**: For initial data exploration and preprocessing.
+- **Python with Pandas and Matplotlib**: 
+**Pandas**: This is essential for data manipulation and analysis, especially for handling large datasets, cleaning, and transforming data.
+**Matplotlib**: Ideal for creating static, animated, and interactive visualizations in Python. It will help you create detailed charts and graphs to better present your analysis.
    
     
     
@@ -160,6 +162,18 @@ LIMIT 25
 ```
 
 
+Here the breakdown of the top paying skills for data scientists in 2023:
+
+- **High Salary Premium for Specialized Skills**: Skills like GDPR and Golang command the highest average salaries among data scientists, with average salaries of $217,738 and $208,750 respectively. This indicates a high demand for these specialized skills, likely due to their importance in data privacy (GDPR) and efficient back-end programming (Golang).
+
+- **Emerging Technologies and Tools**: Skills such as Neo4j, MicroStrategy, and DynamoDB also offer high average salaries (around $170,000). This suggests that expertise in emerging and specialized technologies, especially those related to database management and business intelligence, are highly valued in the market.
+
+- **Diverse Skill Set Demand**: The wide range of skills listed, from traditional programming languages like C ($164,865) and PHP ($168,125) to more niche tools like OpenCV ($172,500) and Tidyverse ($165,513), highlights the diverse skill set required for modern data scientists. It underscores the importance of versatility and the ability to work with different tools and technologies in the field.
+
+
+![Top paying skills](/assets/4_query.png)
+*Bar graph visualizing the top paying skills fro Data Scientist in 2023*
+
 
 ### 5_optimal_skills.sql: Determines the optimal skills that balance demand and pay.
 
@@ -213,15 +227,42 @@ LIMIT 25
 ```
 
 
+- **High Salary Doesn't Always Correlate with High Demand**:
+Skills like GDPR and Golang are among the highest paying with average salaries of $217,738 and $208,750 respectively, but their demand counts are relatively low, with GDPR at 4 and Golang at 2. This suggests that while these skills are highly valued monetarily, they are not as widely required in the job market.
+
+- **Broadly Required Skills with Moderate Salaries**:
+Skills such as "C" and "Go" have high demand counts of 48 and 57 respectively, with average salaries of $164,865 and $164,691. This indicates that these skills are broadly required across various job roles, even though they do not command the highest salaries. Employers may be willing to pay moderately high salaries due to the widespread necessity of these skills.
+
+- **Niche Skills with High Salaries**:
+Several niche skills, such as "Atlassian" and "Microstrategy", have moderate demand counts (5 and 6 respectively) but command relatively high average salaries ($189,700 and $171,147). This indicates that while these skills are not in high demand, they are specialized enough to warrant higher pay when they are needed.
+
 
 
 
 
 # Conclusions
-This project highlights the power of SQL in data analysis, offering valuable insights into job market trends and salary distributions. The SQL scripts provided can be reused and adapted for similar data analysis tasks.
-
+This SQL-based data job analysis project successfully demonstrates the power of SQL in uncovering valuable insights from job market data. By analyzing trends, top-paying jobs, and in-demand skills, the project highlights key areas for career development in data science. The findings emphasize the importance of specific programming languages, cloud computing skills, and specialized domains in achieving high salaries and demand. This project serves as a robust framework for similar analyses, providing reusable SQL scripts for detailed job market investigations. Contributions and further enhancements are encouraged under the MIT License.
 # Contributing
 Contributions are welcome! Feel free to fork this repository and submit pull requests with improvements or additional analyses.
 
 # License
-This project is licensed under the MIT License. See the LICENSE file for details.
+MIT License
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
