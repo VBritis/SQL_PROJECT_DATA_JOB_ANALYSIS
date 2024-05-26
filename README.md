@@ -1,7 +1,7 @@
 # Introduction
-🌌 This project focuses on analyzing job market data using SQL to uncover trends, identify top-paying jobs, and understand skill demands focus in data scientist rules! The SQL scripts provided facilitate detailed analysis to extract valuable insights from job market data.
+🌌 This project focuses on analyzing job market data using SQL to uncover trends, identify top-paying data jobs in 2023, and understand skill demands focus in data scientist rules! The SQL scripts provided facilitate detailed analysis to extract valuable insights from job market data.
 
-🔎 SQL queries? Check them out here: [queries floder](/project_sql/)
+🔎 SQL queries? Check them out here: [queries folder](/project_sql/)
 
 📊 Graphics? Check out here: [graphics folder](/visualization/)
 
